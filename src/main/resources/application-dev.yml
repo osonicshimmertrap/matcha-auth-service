@@ -1,0 +1,56 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/matcha_auth
+    username: matcha
+    password: matcha
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+
+logging:
+  level:
+    az.matcha: DEBUG
+    org.hibernate.SQL: DEBUG
+
+rsa:
+  private-key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCxdOrZI9Th5xbW
+    bpsngBvA1RG/h2VQB11+5EItOrWmgYTAoFNkkCM+uUAfxHqdqFCGGNTyrvKPcRiF
+    Zoat4DwEIm+oeowH4BLR1DU6mcyYh67qSRNli3imvNA52I/HNWZO1rguZ79CWQ2K
+    5socMsTQNGUO2nSdQnTCoCDGytWxjkqlOB3ygLPxt6vVG1V1DVCG+3CaUACUeaYs
+    ehovszry225XTf2+0ueotJUzNxxyt0oHcUiQ0dMrSA5byZe67COCAjr8B+wJxs1H
+    5Rnnkde6yP/U9G3sNvEnSzugzLsUrxQTN5ibmWbDT4OFCzk6RaeQsdi1ZBaf84kh
+    FIgu+ZVjAgMBAAECggEAGE7nt1mNLmoKsCeei/P52URWlgyPTZMfX45s8j0kkkET
+    qj9MAm6BesoYL+x+JLKLCpNu4tTMLTyqGzvxdEf5xfyMRwviZVcbEjB7dMzfQIBK
+    7upBBJvs/wobi+ZPwP4I8avADGXxxmjkeK58k7hF9YSigz0G1F6SF/GktmvP3JkM
+    +iBK8iljt1Em4zhmtkwNCFgdubRZEGarPe+1jfgByR7YI9qF8tP1AiX+i2eltXLr
+    FHM9UfQJV50nj1OCGDzKG8y675/3KlmI0zO8zFy207UZa075FhHbB8581SpQEuxx
+    TmqFMtrD9Op8AiPUKobFy4Ukn9/OuyXpv7BuM4j94QKBgQD0G46mRtU1kgzPZ+2I
+    RXYDpqZ4IVc+Vl52ygxGaElNe1xJFk/NyhvhBZU4DkD8x1IFGNW9Fh70ppsj8/tf
+    Boeha0VOLcqbG8ls4gbOGWiu3tv0hvGyNzUoboV6lJQeSPm5l62OBIktiVGQClHv
+    IeqaW7LyywEwXQBKpO+Xvz0kvQKBgQC6GhuxKlk8umaC3/LZzuYtJ6p12qqVUVCT
+    5YUI9iLLyRK/blCa31SXqvvBe1J8EafxuHmAwtz6s8oGmpdQ0VInH8hA5kM0ukKj
+    OBL+gR+tZAH2RGFIKt3IwBr7AK/Z5juZ+Sr1yoH69MLND0d2ea70zskhnl5gar2R
+    5ZeifjUUnwKBgQC033ZjXji86Or1A1zNjCpVqjXO7WVnmzeDbVKLGNq3vqAyx4V6
+    RjdCFJDsaCNfKZFslWpKIQnu3UQ276FiV8RHpuRDeUqWg5BMTW4daFZYvGjeVt7f
+    3mhU/Q+KNG1Lw2bGTc0bXeEHDKiSwhLTzZ23ohqGLEVFQKPmqy+ckOcNQQJ/Jc0n
+    0tTHS46RRAQ5UAS2vHVSKp5ACBR8SY5Vd3yHlN1C8Z92v/6dMDGK8cIa/xiXBIJ0
+    K7NpL4NVhgHguonKJihOhOBAxnUPFBhPw2J3DMFDpMI/AGm0oxJiaJm7Hoelk6EJ
+    GOQJgvA0oXJ5EZel8hQOxsVkZjFIUFpScq8wGQKBgQCq5wWBtuzIHWbo7fZYe9kI
+    V0CqOSN9dxYYF9BGfq+JzPuvOVwVAlsyJYjn04ID4nF2GwnhjElwBNNb+S0g9dLC
+    yHtdxyYFzvrJmFiG6Wis0GmwtOlTnSpuGKgSlkhPcNhkGhfPCBd/nihQx8fwyw86
+    TGlIJfBH0n2WPfAYhuEKBg==
+    -----END PRIVATE KEY-----
+  public-key: |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsXTq2SPU4ecW1m6bJ4Ab
+    wNURv4dlUAddfuRCLTq1poGEwKBTZJAjPrlAH8R6nahQhhjU8q7yj3EYhWaGreA8
+    BCJvqHqMB+AS0dQ1OpnMmIeu6kkTZYt4przQOdiPxzVmTta4Lme/QlkNiubKHDLE
+    0DRlDtp0nUJ0wqAgxsrVsY5KpTgd8oCz8ber1RtVdQ1QhvtwmlAAlHmmLHoaL7M6
+    8ttuV039vtLnqLSVMzcccrdKB3FIkNHTK0gOW8mXuuwjggI6/AfsCcbNR+UZ55HX
+    usj/1PRt7DbxJ0s7oMy7FK8UEzeYm5lmw0+DhQs5OkWnkLHYtWQWn/OJIRSILvmV
+    YwIDAQAB
+    -----END PUBLIC KEY-----

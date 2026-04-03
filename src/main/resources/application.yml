@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: matcha-auth-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/matcha_auth}
+    username: ${DB_USERNAME:matcha}
+    password: ${DB_PASSWORD:matcha}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: ${SERVER_PORT:8081}
+  tomcat:
+    max-http-form-post-size: 1MB
+
+rsa:
+  public-key: ${RSA_PUBLIC_KEY}
+  private-key: ${RSA_PRIVATE_KEY}
+
+jwt:
+  access-token-expiry: PT15M
+  refresh-token-expiry: P7D
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
