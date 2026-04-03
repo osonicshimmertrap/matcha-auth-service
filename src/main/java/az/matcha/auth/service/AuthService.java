@@ -128,11 +128,9 @@ public class AuthService {
 
     @Transactional
     public void verifyTelegramLink(TelegramLinkRequest request) {
-        User user = userRepository.findAll().stream()
-                .filter(u -> request.code().equals(u.getTelegramLinkCode()))
+        User user = userRepository.findByTelegramLinkCode(request.code())
                 .filter(u -> u.getTelegramLinkCodeExpiresAt() != null
                         && Instant.now().isBefore(u.getTelegramLinkCodeExpiresAt()))
-                .findFirst()
                 .orElseThrow(() -> new AuthException("Invalid or expired verification code",
                         HttpStatus.UNAUTHORIZED));
 
